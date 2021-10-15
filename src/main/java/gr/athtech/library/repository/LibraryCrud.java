@@ -16,6 +16,10 @@ public class LibraryCrud {
         books.add(book);
     }
 
+    public void create(List<Book> books){
+        this.books.addAll(books);
+    }
+
     public Book read(int index){
         if (index<0 || index>= books.size())
             return null;
@@ -42,5 +46,9 @@ public class LibraryCrud {
         return true;
     }
 
+    @Override
+    public String toString(){
+        return "Library\n" + books.toString();
+    }
 
 }

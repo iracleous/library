@@ -13,7 +13,21 @@ import java.util.List;
 public class LibraryApplication {
     public static void main(String[] args) {
 
+    LibraryCrud libraryCrud = new LibraryCrud();
+    LibraryLoader libraryLoader = new LibraryLoaderImpl();
 
+    List<Book> books = libraryLoader.readLibrary("mybooks.csv");
+
+    libraryCrud.create(books);
+
+        System.out.println(libraryCrud.toString());
+
+
+
+    }
+
+
+    private static void test2(){
         LibraryCrud libraryCrud = new LibraryCrud();
         Book book = new Book();
         book.setAuthor("Hemingway");
@@ -27,8 +41,6 @@ public class LibraryApplication {
 
         LibraryLoader libraryLoader = new LibraryLoaderImpl();
         libraryLoader.saveLibrary(libraryCrud.read(), "mybooks.csv");
-
-
     }
 
     private static void testing() {
