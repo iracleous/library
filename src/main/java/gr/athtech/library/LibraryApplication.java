@@ -2,6 +2,9 @@ package gr.athtech.library;
 
 import gr.athtech.library.model.Book;
 import gr.athtech.library.model.User;
+import gr.athtech.library.repository.LibraryCrud;
+import gr.athtech.library.repository.LibraryLoader;
+import gr.athtech.library.repository.LibraryLoaderImpl;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,7 +25,8 @@ public class LibraryApplication {
 
         System.out.println(libraryCrud.read());
 
-
+        LibraryLoader libraryLoader = new LibraryLoaderImpl();
+        libraryLoader.saveLibrary(libraryCrud.read(), "mybooks.csv");
 
 
     }

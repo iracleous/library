@@ -1,4 +1,4 @@
-package gr.athtech.library;
+package gr.athtech.library.repository;
 
 import gr.athtech.library.model.Book;
 
